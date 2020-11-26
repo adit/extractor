@@ -1,0 +1,19 @@
+{
+  "name": "extractor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "extractor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "extractor",
+    "aria2",
+    "googleapis"
+  ],
+  "author": "Aditya Phra",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}

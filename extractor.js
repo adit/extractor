@@ -45,8 +45,21 @@ if (!fileId) {
     const result = await axios.get(url);
     execute(url, result.data.name);
   } catch (error) {
-    console.log(error);
-    console.error('Oops! Something went wrong...');
+    let message = error;
+
+    if (error.response?.status === 404) {
+      message = 'File not found!';
+    }
+
+    if (error.response?.status === 400) {
+      message = 'Your apiKey is invalid!';
+    }
+
+    if (error.code === 'ENOTFOUND') {
+      message = 'Please check your internet connection!';
+    }
+
+    console.log(message);
     process.exit(1);
   }
 })();
